@@ -1,0 +1,48 @@
+:root {
+  --main-bg:#38a2f8;
+}
+
+body {
+  background-image: url("https://i.redd.it/1h7q60ab96t31.jpg");
+}
+
+input:focus, button:focus {
+  border: 1px solid var(--main-bg);
+  box-shadow: none;
+}
+
+.form-check-input:checked {
+  background-color: green !important;
+  border-color: green !important;
+}
+
+.card, .btn, input {
+  border-radius: 0 !important;
+}
+
+.card {
+  border-radius: 20px !important;
+}
+
+.btn {
+  transition: 0.3s all ease-in-out;
+  background-color: #38a2f8;
+}
+
+button:hover {
+  background-color: #385bf8;
+  transition: 0.3s all ease-in-out;
+}
+
+.hint, .sublink {
+  color: #c2bfbf;
+}
+
+.card-body a {
+  text-decoration: none;
+  color: #c2bfbf;
+  transition: 0.3s all ease-in-out;
+}
+.card-body a:hover {
+  color: #1a34a8;
+}

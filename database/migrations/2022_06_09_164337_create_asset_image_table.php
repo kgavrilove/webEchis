@@ -14,8 +14,11 @@ class CreateAssetImageTable extends Migration
     public function up()
     {
         Schema::create('asset_image', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->primary(['asset_id','image_id']);
+            $table->bigInteger('asset_id')->unsigned();
+            $table->bigInteger('image_id')->unsigned();
+            $table->foreign('asset_id')->references('id')->on('asset');
+            $table->foreign('image_id')->references('id')->on('image');
         });
     }
 

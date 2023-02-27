@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAssetAiDataTable extends Migration
+class CreateAssetTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateAssetAiDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('asset_ai_data', function (Blueprint $table) {
-            $table->id();
+        Schema::create('asset', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('author');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateAssetAiDataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asset_ai_data');
+        Schema::dropIfExists('asset');
     }
 }

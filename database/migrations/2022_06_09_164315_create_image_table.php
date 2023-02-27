@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAiDataTable extends Migration
+class CreateImageTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateAiDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('ai_data', function (Blueprint $table) {
-            $table->id();
+        Schema::create('image', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('path');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateAiDataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ai_data');
+        Schema::dropIfExists('image');
     }
 }
